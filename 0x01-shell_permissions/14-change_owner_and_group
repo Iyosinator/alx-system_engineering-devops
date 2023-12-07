@@ -1,2 +1,13 @@
 #!/bin/bash
-chown vincent:staff
+
+# Change owner and group recursively to vincent:staff
+chown -R vincent:staff .
+
+# Check if operation was successful
+if [[ $? -eq 0 ]]; then
+  echo "Owner and group changed successfully!"
+else
+  echo "Error: Failed to change owner and group."
+  exit 1
+fi
+
